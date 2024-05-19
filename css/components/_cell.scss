@@ -1,0 +1,56 @@
+.cell {
+    @include tablet-styles {
+      width: 100% !important;
+    }
+  
+    @include laptop-l-styles {
+      width: 106%;
+    }
+  
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    img {
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+      display: block;
+      cursor: pointer;
+    }
+  
+    .content-fade {
+      position: absolute;
+      padding: 10px;
+      color: #333;
+      background-color: var.$background-color-base;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      .top-hr,
+      .bottom-hr {
+        height: 1px;
+        background-color: #333;
+        width: 100%;
+      }
+  
+      .sentence {
+        color: grey;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        z-index: 1;
+      }
+    }
+  
+    &:hover .content-fade {
+      opacity: 1;
+    }
+  }
+  
